@@ -18,20 +18,18 @@ guessNumberGame.makeGuess = function(guess) { // accepts a guess from the user
 // higher or lower
 guessNumberGame.promptUser = function(guess) {
   if (guess > this.answer) { // if the guess is too big...
-    var message = "The number is actually smaller than that." // give the user this message.
-    this.$promptArea.text(message)
+    var message = "Nope! It's lower than " + guess; // give the user this message.
   } else if (guess < this.answer) { // if the guess is too small...
-    var message = "The number is bigger than that." // give them this one.
-    this.$promptArea.text(message)
+    var message = "Nope! It's higher than " + guess; // give them this one.
   }
-  // this.$promptArea.text(message) // change the DOM to reflect the appropriate message
+  this.$promptArea.text(message);
 };
 
 
 // Managing response: if the user gets it right,
 // let them know they win
 guessNumberGame.winGame = function() {
-  this.$promptArea.text("You win!"); // edit the text in the prompt area to say "You win!"
+  this.$promptArea.text("You got it!"); // edit the text in the prompt area to say "You win!"
 };
 
 
